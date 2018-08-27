@@ -17,6 +17,6 @@ class LinkController < ApplicationController
   end
 
   def return_sorted_link_list
-    
+
   end
 end
