@@ -4,12 +4,11 @@ class LinkController < ApplicationController
     if Link.where(short_code: params[:short_code]).exists?
 
     else
-
+      Link.create()
     end
   end
 
   def create_link
-
   end
 
   def redirect_link
