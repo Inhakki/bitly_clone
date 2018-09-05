@@ -1,11 +1,14 @@
 require 'rails_helper'
 
-Rspec.describe 'link', type: :model do
+RSpec.describe 'short_link', type: :model do
 
   context "ShortLink class validations" do
-    it "should validate" do
+    subject { create(:short_link) }
 
-    end
+    it { is_expected.to validate_presence_of(:short_alias) }
+    it { is_expected.to validate_uniqueness_of(:short_alias) }
+    it { is_expected.to validate_presence_of(:url) }
+
   end
 
   context "Test ShortLink class functionality" do
