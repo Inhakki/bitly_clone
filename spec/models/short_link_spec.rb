@@ -13,7 +13,7 @@ RSpec.describe 'short_link', type: :model do
 
   context "Test ShortLink class functionality" do
     it "should create short link codes when receiving a new link." do
-      
+
     end
   end
 
