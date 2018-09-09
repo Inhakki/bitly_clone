@@ -5,8 +5,6 @@ RSpec.describe 'short_link', type: :model do
   context "ShortLink class validations" do
     subject { create(:short_link) }
 
-    it { is_expected.to validate_presence_of(:short_alias) }
-    it { is_expected.to validate_uniqueness_of(:short_alias) }
     it { is_expected.to validate_presence_of(:url) }
 
   end

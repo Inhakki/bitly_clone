@@ -1,10 +1,11 @@
 class ShortLinksController < ApplicationController
 
-  def determine_route
-    if ShortLink.where(short_code: params[:short_code]).exists?
-
+  def find_link
+    if link = ShortLink.where(short_code: params[:short_code]).exists?
+      redirect_link link.url
     else
-      create_link(params)
+      # create_link(params)
+      ShortLink.create(params[:url])
     end
   end
 

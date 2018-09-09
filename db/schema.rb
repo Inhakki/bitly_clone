@@ -10,23 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_05_190413) do
+ActiveRecord::Schema.define(version: 2018_09_09_164751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "last_short_alias_keepers", force: :cascade do |t|
-    t.string "last_short_alias"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "short_links", force: :cascade do |t|
-    t.string "short_alias"
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["short_alias"], name: "index_short_links_on_short_alias", unique: true
+    t.string "title"
+    t.integer "request_count"
   end
 
 end
