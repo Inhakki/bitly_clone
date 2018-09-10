@@ -10,6 +10,13 @@ class ShortLinksController < ApplicationController
   end
 
   def create_link
+    create = ShortLink.create(params[:url])
+
+    if create
+      render jsonapi: create
+    else
+      render jsonapi: create, status: 422
+    end
   end
 
   def redirect_link
